@@ -1,0 +1,326 @@
+C&I_Display German and Global Client Programs FY20 
+
+German Client Programs
+
+A) Main categories
+
+German Client Programs are the strategically most important clients from the perspective of Germany. Their planned structure for FY20 must be adapted in DEAL (see below).
+By default, the field named "Client Program DE" must be available as a custom picklist-field with the following selectable single values displayed in the account page layout:
+
+
+•Crown Jewel
+
+
+•Top Client
+
+
+•Deloitte Private
+
+
+•Blank value (default value)
+
+
+B) Segments of German Client Programs
+When choosing the value "Top Client", next to it a new picklist field named "Segment Top Client" should appear with the following selectable single values:
+
+
+•German HQ Global Strategic
+
+
+•Inbound GCJ
+
+
+•Priority
+
+
+When choosing the value "Deloitte Private", next to it a new picklist field named "Segment Deloitte Private" should appear with the following selectable single values:
+
+•Private Strategic Client
+
+
+•Blank value (default value)
+
+
+Global Client Programs
+
+A) Structure of Global Client Programs
+Global Client Programs are the strategically most important clients from global perspective. 
+By default, the field named "Client Program Global" must be available as custom picklist-field with the following selectable single values displayed in the account page layout:
+
+
+•Global Crown Jewel
+
+
+•Global Strategic
+
+
+•Global Deloitte Private Strategic 
+
+
+•Blank value (default value)
+
+
+- The fields "Client Program DE" and "Client Program Global" must be editable only at the parent account of a group (not in the subsidiaries) and their values must flow through the whole client hierarchy. 
+- If subsidiary is removed from the client hierarchy of a German or Global Client Program or will be assigned as a subsidiary to a Non-Program Client --> this account and it's further subsidiaries should not be marked as Client Program anymore. If the account used to be a "Top Client" or "Deloitte Private" --> the additional field "Segment Top Client" or "Segment Deloitte Private" should not be visible anymore. 
+- If the ultimate parent is not set as a Client Program anymore or will be assigned as a subsidiary to a Non-Program-Client -->  this account and it's further subsidiaries should not be marked as Client Program anymore. If the account used to be a "Top Client" or "Deloitte Private" --> the additional field "Segment Top Client" or "Segment Deloitte Private"should not be visible anymore. 
+- If a new subsidiary is added to the client hierarchy of a Client Program --> the fields "Client Program DE", "Segment Top Client", "Segment Deloitte Private" and "Client Program Global"  must be automatically filled out with the value of the ultimate parent.
+- The fields above must be visible for all users but only users with C&I Admin permission must be able to edit these fields.
+- ALL fields must be evaluable in reports.
+
+
+Technical Design 
+ 
+
+
+
+Option 1 (30):
+
+
+- Implement custom component for dependent picklist feature including non-standard hierarchical check (on parent only-editing feature, and the case that a child record is removed);
+
+- implement onchange / ondelete triggers for updating child records 
+
+/////////////////////////////
+/////////////////////////////
+*********************************************************************
+*********************************************************************
+*********************************************************************
+
+C&I_Manage Mountainview client portfolio 
+    
+Checkbox "Mountainview portfolio" within the C&I data. The field can only be maintained in the parent company and is used throughout the entire group (analogous to the remaining C&I data).
+
+The field is optional.
+
+
+Technical Design 
+ 
+
+- Create the checkbox Mountainview portfolio in the parent account
+
+- Show this field in all related child accounts
+
+- Use existing component to display this additional field in the child accounts​
+ 
+    
+
+/////////////////////////////
+/////////////////////////////
+*********************************************************************
+*********************************************************************
+*********************************************************************
+
+Classifiy by Deloitte Private 
+
+
+Acceptance Criteria 
+ 
+
+
+
+A new field named "Classification by Deloitte Private" must be available as a custom picklist-field with the following selectable single values displayed in the account page layout:
+
+
+• Family Offices and HNWI
+
+
+• Family-run businesses
+
+
+• Foundations, associations and federations
+
+
+• Smaller listed companies
+
+
+• Portfolio companies of PE
+
+
+• Private equity funds/houses
+
+
+• SME
+
+
+• High Growth Enterprises
+
+
+•Blank option (default value)
+
+
+- The field must be editable only at the parent account of a group (not in the subsidiaries) and its value must flow through the whole client hierarchy. However, it must be able to manually alter the related value in particular accounts (parent or subsidiaries) within the client hierarchy in order to maintain deviations (see user story "C&I_Enable differently classified Deloitte Private accounts within a group").
+- The field must be evaluable in reports.
+ 
+
+ 
+Technical Design 
+ 
+
+- Create the new picklist field and only include this field in the ultimate parent account layout
+
+- Include this field in the parent view lighning component to fetch the information from theultimate parent
+ 
+
+ 
+/////////////////////////////
+/////////////////////////////
+*********************************************************************
+*********************************************************************
+*********************************************************************
+
+  
+ Client Category   
+
+ 
+Acceptance Criteria 
+ 
+
+
+
+​Field name: Client Category [German: Kundenkategorie]
+
+The field is optional, not mandatory. 
+
+Field type: Picklist [Default: blank)
+
+Field Values (only one value can be selected):
+•Committed Audit
+•Committed Advisory
+•No Designation
+•No Designation Audit
+
+- The field is only visible for Audit Capture and Independence on the Account and is only editable by Audit Capture and Independence. (tbd permission concept)
+
+- The field is only editable on the group level (ultimate parent) and is automatically transformed to the subsidiaries
+
+- Only Audit Capture and Independence can see and use the field for Reports (permission concept)
+ 
+ 
+Technical Design 
+
+
+- Create the custom field Client Category
+
+- Place this field on the ultimate parent layout
+
+- Adjust the lighning component for child accounts to reflect the value from the ultimate parent​
+ 
+ 
+/////////////////////////////
+/////////////////////////////
+*********************************************************************
+*********************************************************************
+*********************************************************************
+
+ 
+ C&I_Tools_Manage Regions       
+
+ 
+Acceptance Criteria 
+ 
+
+
+
+Location must be displayed as picklist fields in the account page layout and refer to the individual company (not the group) and must be automatically entered by the system based on the postal code (the first 2 digits) of the address marked as headquarters (if available). If no headquarters exists, the system should not assign a location.
+Each location is automatically assigned to a region.
+The following locations must be set in the system (incl. first 2 digits of related postal codes):
+- Berlin / Erfurt / Magdeburg (07, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 39, 98, 99)
+- Dresden (01, 02, 03)
+- Düsseldorf / Köln (32, 33, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 51, 52, 53, 57, 58, 59)
+- Frankfurt (34, 35, 36, 54, 55, 56, 60, 61, 62, 63, 64, 65, 66)
+- Hamburg (20, 21, 22, 23, 24, 25, 26, 27, 28)
+- Hannover (29, 30, 31, 37, 38, 49)
+- Leipzig / Halle (04, 06, 08, 09)
+- Mannheim / Walldorf (67, 68, 69)
+- München (80, 81, 82, 83, 84, 85, 86, 87, 93, 94)
+- Nürnberg (90, 91, 92, 95, 96, 97)
+- Stuttgart (70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 88, 89)
+- Ausland (if the company is headquartered outside Germany) 
+
+Field: Location (Picklist depending on region):
+
+- if East --> 
+
+•Berlin / Erfurt / Magdeburg
+•Leipzig / Halle
+•Dresden
+
+- if Middle
+•Frankfurt
+•Mannheim / Walldorf
+
+
+- if North
+•Hamburg
+
+
+- if Northwest
+•Hannover
+
+
+- if South
+•München / Freising
+•Nürnberg
+
+
+- if Southwest
+•Stuttgart
+
+
+- if West
+•Düsseldorf / Köln
+
+if International
+•Ausland
+
+ 
+
+- Lookup Field: Regional Market Leader (Contact)
+
+- Regions in the account page layout must be automatically selected related to the location
+
+- Furthermore, active German employees should be displayable as Regional Market Leader (object: tbltargets) for each region, if german client program = "Deloitte Private".  should not be visible on account object
+- checkbox "Declination Location" is disabled by default (only editable by C&I Admin)
+ 
+
+Regions must be displayed as picklist fields in the account page layout and must be automatically derived from locations.
+The following regions must be set in the system (incl. related locations):
+
+ 
+
+Picklist Region (not editable - depends on location):
+
+- East
+- Middle
+- North
+- Northwest
+- South
+- Southwest
+- West
+- International
+
+- Blank (default)
+
+ 
+
+Maintenance of locations in an account: The C&I administrator should be able to enter a system-different location if the checkbox "Declination Location" isSelected 
+
+
+Central maintenance of locations and regions: The C&I administrator should be able to centrally edit and update the values of locations, regions, postal codes and Regional Market Leaders. For this purpose an own tool is needed for him/her.
+
+Reporting: All regions, locations, ultimate parent regions, ultimate parent locations  and regional market leader must be evaluable in reports.
+ 
+ 
+Technical Design 
+ 
+
+
+
+Option 1 (30h):
+
+
+Create custom component which implements the above logic, for new and edit pages.
+
+
+The newly created component will be added in the edit and new account-pages. Please have the look at the Visio image on the SharePoint repository for further information about the data flow.
+

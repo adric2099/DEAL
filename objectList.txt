@@ -1,0 +1,11 @@
+DEAL_CostCenter__c
+DEAL_ServiceUnit__c
+DEAL_ServiceArea__c
+DEAL_ServiceLine__c
+DEAL_Business__c
+DEAL_Office__c
+Account
+DEAL_ServiceLineProduct__c
+Lead
+Opportunity
+DEAL_Engagement__c

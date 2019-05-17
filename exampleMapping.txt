@@ -1,0 +1,29 @@
+[
+    {
+        accountPickListField: 'DEAL_SECEntityRegistered__c',
+        accountPickListValue: 'Broker/Dealer',
+        questionTitle: 'Is the audited entity registered with the SEC as "Issuer" or "Broker or Dealer"?',
+        questionPickListValue: 'Broker or Dealer',        
+    },
+    {
+        accountPickListField: 'DEAL_SECEntityRegistered__c',
+        accountPickListValue: 'Broker/Dealer',
+        questionTitle: 'Is the audited entity registered with the SEC as "Issuer" or "Broker or Dealer"?',
+        questionPickListValue: 'Broker or Dealer',        
+    },
+    {
+        accountPickListField: 'DEAL_SECEntityRegistered__c',
+        accountPickListValue: 'Broker/Dealer',
+        questionTitle: 'Is the audited entity registered with the SEC as "Issuer" or "Broker or Dealer"?',
+        questionPickListValue: 'Broker or Dealer',        
+    },
+]
+
+List<MappingAcountQuestionValues> listMappingValues = (List<MappingAcountQuestionValues>) 
+', DEAL_Account__r.'+accountPickListField'
+public MappingAcountQuestionValues {
+    string accountPickListField;
+    string accountPickListValue;
+    string questionTitle;
+    string questionPickListValue;
+}

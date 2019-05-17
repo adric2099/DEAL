@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Account</members>
+        <members>Activity</members>
+        <members>Task</members>
+        <members>Event</members>
+        <members>User</members>
+        <members>DEAL_ContactRole__c</members>
+        <members>DEAL_Engagement__c</members>
+        <members>DEAL_ClientFeedback__c</members>
+        <members>DEAL_AccountAuditor__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Task-Manual Layout</members>
+        <members>Task-System Layout</members>
+        <members>Global-Global Layout</members>
+        <members>DEAL_ContactRole__c-Engagement Contact Role</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>DEAL_URLPEPorfolio</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>DEAL/DEAL_EngagementInformDE</members>
+        <members>DEAL/DEAL_EngagementInform</members>
+        <members>DEAL/DEAL_AccountNameModified1</members>
+        <members>DEAL/AccountRegionModified</members>
+        <members>DEAL/DEAL_AccountLCSPModified</members>
+        <members>DEAL/DEAL_AccountProgramCategoryModified</members>
+        <members>DEAL/DEAL_AccountClientProgramDEFieldModified</members>
+        <members>DEAL/DEAL_AccountApprovalCIRModified</members>
+        <members>DEAL/DEAL_AccountStatusModified</members>
+        <members>DEAL/AccountAuditorModifiedDE</members>
+        <members>DEAL/DEAL_AccountStockExchangeModified</members>
+        <members>DEAL/AccountGlobalUltimateParentModifiedDE</members>
+        <members>DEAL/DEAL_AccountBranchModified</members>
+        <members>DEAL/DEAL_AccountLCSPModified</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>Task.DEAL_ReminderTask</members>
+        <members>DEAL_AccountAuditor__c.DEAL_AccountAditorModified</members>
+        <members>DEAL_Branch__c.DEAL_BranchModified</members>
+        <members>Account.DEAL_GlobalLCSPModified</members>
+        <name>Workflow</name>
+    </types>
+    <types>
+        <members>DEAL_EngagementInformLCSP-8</members>
+        <members>DEAL_AccountFieldsmodified-6</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>DEAL_Engagement__c.EngagementContacts</members>
+        <name>quickActions</name>
+    </types> 
+    <types>
+        <members>CustomLabels.DEAL_EmailSubject1 </members>
+        <members>CustomLabels.DEAL_EmailBody6 </members>
+        <members>CustomLabels.DEAL_CIAadminAccount </members>
+        <members>CustomLabels.DEAL_CIAadminAccountAuditor </members>
+        <members>CustomLabels.DEAL_CIAadminAccountName </members>
+        <name>labels</name>
+    </types>
+    <types>
+        <members>TEST_DEAL_EngagementTriggerHandler</members>
+        <members>DEAL_TestDataUtility</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>DEAL_EngagementTriggerHandler</members>
+        <name>Trigger</name>
+    </types>
+    <version>42.0</version>
+</Package>
